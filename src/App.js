@@ -4,7 +4,6 @@ import { createContext, useState, useEffect } from "react";
 // Components
 import Header from "./components/Header";
 import ArticleList from "./components/ArticleList";
-// import Form from "./components/Form";
 // CSS
 import "./App.css";
 
@@ -35,15 +34,22 @@ function App() {
       {/* {console.log(formData)} */}
       <div className="App">
         <Header />
-        <ArticleList />
         <form onSubmit={handleSubmit(onSubmit)}>
-          <input {...register("productName")} />
-          <input {...register("quantity", { required: true })} />
-          {errors.quantity && <p>A quantity is required.</p>}
-          <input {...register("price", { required: true })} />
-          {errors.price && <p>A price is required.</p>}
-          <input type="submit" value="Create" />
+          <input placeholder="Product Name" {...register("productName")} />
+          <input
+            placeholder="Quantity"
+            {...register("quantity", { required: true })}
+          />
+          {errors.quantity && <p className="error">A quantity is required.</p>}
+          <input
+            placeholder="Price"
+            {...register("price", { required: true })}
+          />
+          {errors.price && <p className="error">A price is required.</p>}
+          <input className="btn" type="submit" value="Create" />
         </form>
+        <hr />
+        <ArticleList />
       </div>
     </FormContext.Provider>
   );
