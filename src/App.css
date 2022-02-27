@@ -12,3 +12,36 @@ h1 {
   margin: 10px;
   font-size: 40px;
 }
+
+main {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+article {
+  /* border: 2px solid green; */
+  width: fit-content;
+  display: grid;
+  grid-template-columns: 400px 200px 200px;
+  align-items: center;
+  border-bottom: 2px solid gray;
+}
+
+article h3 {
+  margin-left: 20px;
+  padding: 10px 20px;
+  color: rgb(255, 248, 254);
+  background-color: rgb(255, 113, 180);
+  width: fit-content;
+  border-radius: 40px;
+}
+
+.quantity,
+.price {
+  /* border: 2px solid blue; */
+  font-size: 18px;
+  text-align: center;
+  /* padding: 0 40px; */
+}
