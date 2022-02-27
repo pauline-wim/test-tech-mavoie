@@ -1,4 +1,10 @@
+import { useContext, useState, useEffect } from "react";
+// Context
+import { FormContext } from "../App";
+
 export default function ArticleList() {
+  const formData = useContext(FormContext);
+
   return (
     <main>
       <article>
@@ -16,6 +22,18 @@ export default function ArticleList() {
         <p className="quantity">6</p>
         <p className="price">3 €</p>
       </article>
+      {formData.map((cookie, i) => {
+        // console.log(cookie);
+        if (i > 0) {
+          return (
+            <article key={i}>
+              <h3>{cookie.productName}</h3>
+              <p className="quantity">{cookie.quantity}</p>
+              <p className="price">{cookie.price} €</p>
+            </article>
+          );
+        }
+      })}
     </main>
   );
 }
